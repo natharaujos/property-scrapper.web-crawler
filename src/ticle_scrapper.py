@@ -9,12 +9,12 @@ from bs4 import BeautifulSoup
 from interfaces.property import Property
 
 class TicleScrapper():
-
     def __init__(self):
         self.driver = webdriver.Chrome() 
         self.driver.get("https://www.ticleimoveis.com.br/index")
         self.driver.set_window_size(1920, 1080)
         self.wait = WebDriverWait(self.driver, 20)
+        self.link = "https://www.ticleimoveis.com.br/index"
 
     async def find_elements_to_interact(self):
         self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "body > app-root > mat-sidenav-container > mat-sidenav-content > mat-toolbar > div.ng-star-inserted > button:nth-child(3)"))).click()
@@ -33,7 +33,7 @@ class TicleScrapper():
             value = "R$" + parts2[0].strip()
             description: str = parts2[1].strip()
             description_formated = description.replace("00", "").replace("Mais detalhes", "")
-            property = Property(name, value, description_formated)
+            property = Property(name, value, description_formated, self.link)
             properties_filtered.append(property)
             
         return properties_filtered

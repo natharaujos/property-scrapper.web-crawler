@@ -101,7 +101,7 @@
         "kind": 6,
         "importPath": "src.interfaces.property",
         "description": "src.interfaces.property",
-        "peekOfCode": "class Property:\n    def __init__(self, name, value, description):\n        self.name = name\n        self.value = value\n        self.description = description",
+        "peekOfCode": "class Property:\n    def __init__(self, name: str, value: str, description: str, link: str):\n        self.name = name\n        self.value = value\n        self.description = description\n        self.link = link",
         "detail": "src.interfaces.property",
         "documentation": {}
     },
@@ -110,7 +110,7 @@
         "kind": 6,
         "importPath": "src.ticle_scrapper",
         "description": "src.ticle_scrapper",
-        "peekOfCode": "class TicleScrapper():\n    def __init__(self):\n        self.driver = webdriver.Chrome() \n        self.driver.get(\"https://www.ticleimoveis.com.br/index\")\n        self.driver.set_window_size(1920, 1080)\n        self.wait = WebDriverWait(self.driver, 20)\n    async def find_elements_to_interact(self):\n        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, \"body > app-root > mat-sidenav-container > mat-sidenav-content > mat-toolbar > div.ng-star-inserted > button:nth-child(3)\"))).click()\n        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, \"body > app-root > mat-sidenav-container > mat-sidenav-content > busca-resultado > div > form > div > div:nth-child(3) > div > mat-form-field > div > div.mat-form-field-flex\"))).click()\n        lavras_option = self.wait.until(EC.element_to_be_clickable((By.XPATH, \"//span[contains(text(), 'LAVRAS')]\")))",
+        "peekOfCode": "class TicleScrapper():\n    def __init__(self):\n        self.driver = webdriver.Chrome() \n        self.driver.get(\"https://www.ticleimoveis.com.br/index\")\n        self.driver.set_window_size(1920, 1080)\n        self.wait = WebDriverWait(self.driver, 20)\n        self.link = \"https://www.ticleimoveis.com.br/index\"\n    async def find_elements_to_interact(self):\n        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, \"body > app-root > mat-sidenav-container > mat-sidenav-content > mat-toolbar > div.ng-star-inserted > button:nth-child(3)\"))).click()\n        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, \"body > app-root > mat-sidenav-container > mat-sidenav-content > busca-resultado > div > form > div > div:nth-child(3) > div > mat-form-field > div > div.mat-form-field-flex\"))).click()",
         "detail": "src.ticle_scrapper",
         "documentation": {}
     },
