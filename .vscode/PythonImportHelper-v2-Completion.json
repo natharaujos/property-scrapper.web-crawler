@@ -1,0 +1,135 @@
+[
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "expected_conditions",
+        "importPath": "selenium.webdriver.support",
+        "description": "selenium.webdriver.support",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support",
+        "documentation": {}
+    },
+    {
+        "label": "ActionChains",
+        "importPath": "selenium.webdriver.common.action_chains",
+        "description": "selenium.webdriver.common.action_chains",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.action_chains",
+        "documentation": {}
+    },
+    {
+        "label": "NoSuchElementException",
+        "importPath": "selenium.common.exceptions",
+        "description": "selenium.common.exceptions",
+        "isExtraImport": true,
+        "detail": "selenium.common.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "TimeoutException",
+        "importPath": "selenium.common.exceptions",
+        "description": "selenium.common.exceptions",
+        "isExtraImport": true,
+        "detail": "selenium.common.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "urlopen",
+        "importPath": "urllib.request",
+        "description": "urllib.request",
+        "isExtraImport": true,
+        "detail": "urllib.request",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "Property",
+        "importPath": "interfaces.property",
+        "description": "interfaces.property",
+        "isExtraImport": true,
+        "detail": "interfaces.property",
+        "documentation": {}
+    },
+    {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "TicleScrapper",
+        "importPath": "ticle_scrapper",
+        "description": "ticle_scrapper",
+        "isExtraImport": true,
+        "detail": "ticle_scrapper",
+        "documentation": {}
+    },
+    {
+        "label": "Property",
+        "kind": 6,
+        "importPath": "src.interfaces.property",
+        "description": "src.interfaces.property",
+        "peekOfCode": "class Property:\n    def __init__(self, name, value, description):\n        self.name = name\n        self.value = value\n        self.description = description",
+        "detail": "src.interfaces.property",
+        "documentation": {}
+    },
+    {
+        "label": "TicleScrapper",
+        "kind": 6,
+        "importPath": "src.ticle_scrapper",
+        "description": "src.ticle_scrapper",
+        "peekOfCode": "class TicleScrapper():\n    def __init__(self):\n        self.driver = webdriver.Chrome() \n        self.driver.get(\"https://www.ticleimoveis.com.br/index\")\n        self.driver.set_window_size(1920, 1080)\n        self.wait = WebDriverWait(self.driver, 20)\n    async def find_elements_to_interact(self):\n        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, \"body > app-root > mat-sidenav-container > mat-sidenav-content > mat-toolbar > div.ng-star-inserted > button:nth-child(3)\"))).click()\n        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, \"body > app-root > mat-sidenav-container > mat-sidenav-content > busca-resultado > div > form > div > div:nth-child(3) > div > mat-form-field > div > div.mat-form-field-flex\"))).click()\n        lavras_option = self.wait.until(EC.element_to_be_clickable((By.XPATH, \"//span[contains(text(), 'LAVRAS')]\")))",
+        "detail": "src.ticle_scrapper",
+        "documentation": {}
+    },
+    {
+        "label": "ticle_scrapper",
+        "kind": 5,
+        "importPath": "src.web_crawler",
+        "description": "src.web_crawler",
+        "peekOfCode": "ticle_scrapper = TicleScrapper()\nloop = asyncio.get_event_loop()\nloop.run_until_complete(ticle_scrapper.find_elements_to_interact())\nloop.run_until_complete(ticle_scrapper.execute_scrapping())",
+        "detail": "src.web_crawler",
+        "documentation": {}
+    },
+    {
+        "label": "loop",
+        "kind": 5,
+        "importPath": "src.web_crawler",
+        "description": "src.web_crawler",
+        "peekOfCode": "loop = asyncio.get_event_loop()\nloop.run_until_complete(ticle_scrapper.find_elements_to_interact())\nloop.run_until_complete(ticle_scrapper.execute_scrapping())",
+        "detail": "src.web_crawler",
+        "documentation": {}
+    }
+]
