@@ -97,6 +97,15 @@
         "documentation": {}
     },
     {
+        "label": "mysql.connector",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
         "label": "Property",
         "kind": 6,
         "importPath": "src.interfaces.property",
@@ -112,24 +121,6 @@
         "description": "src.ticle_scrapper",
         "peekOfCode": "class TicleScrapper():\n    def __init__(self):\n        self.driver = webdriver.Chrome() \n        self.driver.get(\"https://www.ticleimoveis.com.br/index\")\n        self.driver.set_window_size(1920, 1080)\n        self.wait = WebDriverWait(self.driver, 20)\n        self.link = \"https://www.ticleimoveis.com.br/index\"\n    async def find_elements_to_interact(self):\n        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, \"body > app-root > mat-sidenav-container > mat-sidenav-content > mat-toolbar > div.ng-star-inserted > button:nth-child(3)\"))).click()\n        self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, \"body > app-root > mat-sidenav-container > mat-sidenav-content > busca-resultado > div > form > div > div:nth-child(3) > div > mat-form-field > div > div.mat-form-field-flex\"))).click()",
         "detail": "src.ticle_scrapper",
-        "documentation": {}
-    },
-    {
-        "label": "ticle_scrapper",
-        "kind": 5,
-        "importPath": "src.web_crawler",
-        "description": "src.web_crawler",
-        "peekOfCode": "ticle_scrapper = TicleScrapper()\nloop = asyncio.get_event_loop()\nloop.run_until_complete(ticle_scrapper.find_elements_to_interact())\nloop.run_until_complete(ticle_scrapper.execute_scrapping())",
-        "detail": "src.web_crawler",
-        "documentation": {}
-    },
-    {
-        "label": "loop",
-        "kind": 5,
-        "importPath": "src.web_crawler",
-        "description": "src.web_crawler",
-        "peekOfCode": "loop = asyncio.get_event_loop()\nloop.run_until_complete(ticle_scrapper.find_elements_to_interact())\nloop.run_until_complete(ticle_scrapper.execute_scrapping())",
-        "detail": "src.web_crawler",
         "documentation": {}
     }
 ]
